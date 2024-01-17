@@ -4,5 +4,5 @@
 | Exercise | Branch Link |
 |---------:|-------------|
 |1.1|[Exercise 1.1](https://github.com/RaedanGroup/Pokedex/tree/Exercise1.1)|
-|1.2|             |
-|1.3|             |
+|1.2|[Exercise 1.2](https://github.com/RaedanGroup/Pokedex/tree/Exercise1.2)|
+
