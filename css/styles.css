@@ -1,0 +1,28 @@
+/* Style h1 */
+
+h1 {
+    color: #d60909;
+    font-size: 36px;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #d60909;
+}
+
+/* style body text */
+
+body {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+/* style li in bordered rows with no leading dot */
+
+li.bordered {
+    list-style-type: none;
+    border-bottom: 1px solid #1f0303;
+    padding: 10px 0;
+}

@@ -1,23 +1,54 @@
 // Arrary of 3 Pokemon and their evolutions, types, and heights
 
-let pokemonList = [];
-pokemonList[0] = {name: "Bulbasaur", height: 0.7, types: ["grass", "poison"]};
-pokemonList[1] = {name: "Ivysaur", height: 1, types: ["grass", "poison"]};
-pokemonList[2] = {name: "Venusaur", height: 2, types: ["grass", "poison"]};
-pokemonList[3] = {name: "Charmander", height: 0.6, types: ["fire"]};
-pokemonList[4] = {name: "Charmeleon", height: 1.1, types: ["fire"]};
-pokemonList[5] = {name: "Charizard", height: 1.7, types: ["fire", "flying"]};
-pokemonList[6] = {name: "Squirtle", height: 0.5, types: ["water"]};
-pokemonList[7] = {name: "Wartortle", height: 1, types: ["water"]};
-pokemonList[8] = {name: "Blastoise", height: 1.6, types: ["water"]};
+let pokemonListKanto = [];
+pokemonListKanto[0] = {name: "Bulbasaur", height: 0.7, types: ["grass", " poison"]};
+pokemonListKanto[1] = {name: "Ivysaur", height: 1, types: ["grass", " poison"]};
+pokemonListKanto[2] = {name: "Venusaur", height: 2, types: ["grass", " poison"]};
+pokemonListKanto[3] = {name: "Charmander", height: 0.6, types: ["fire"]};
+pokemonListKanto[4] = {name: "Charmeleon", height: 1.1, types: ["fire"]};
+pokemonListKanto[5] = {name: "Charizard", height: 1.7, types: ["fire", " flying"]};
+pokemonListKanto[6] = {name: "Squirtle", height: 0.5, types: ["water"]};
+pokemonListKanto[7] = {name: "Wartortle", height: 1, types: ["water"]};
+pokemonListKanto[8] = {name: "Blastoise", height: 1.6, types: ["water"]};
 
-// Loop through the pokemonList array and print the name and height of each pokemon
-// Largest pokemon gets a special message
+let pokemonListJohto = [];
+pokemonListJohto[0] = {name: "Chikorita", height: 0.9, types: ["grass"]};
+pokemonListJohto[1] = {name: "Bayleef", height: 1.2, types: ["grass"]};
+pokemonListJohto[2] = {name: "Meganium", height: 1.8, types: ["grass"]};
+pokemonListJohto[3] = {name: "Cyndaquil", height: 0.5, types: ["fire"]};
+pokemonListJohto[4] = {name: "Quilava", height: 0.9, types: ["fire"]};
+pokemonListJohto[5] = {name: "Typhlosion", height: 1.7, types: ["fire"]};
+pokemonListJohto[6] = {name: "Totodile", height: 0.6, types: ["water"]};
+pokemonListJohto[7] = {name: "Croconaw", height: 1.1, types: ["water"]};
+pokemonListJohto[8] = {name: "Feraligatr", height: 2.3, types: ["water"]};
 
-for (let i = 0; i < pokemonList.length; i++) {
-    if (pokemonList[i].height > 1.8) {
-        document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") - Wow, that's big! <br>");
-    } else {
-        document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") <br>");
-    }
+let pokemonListHoenn = [];
+pokemonListHoenn[0] = {name: "Treecko", height: 0.5, types: ["grass"]};
+pokemonListHoenn[1] = {name: "Grovyle", height: 0.9, types: ["grass"]};
+pokemonListHoenn[2] = {name: "Sceptile", height: 1.7, types: ["grass"]};
+pokemonListHoenn[3] = {name: "Torchic", height: 0.4, types: ["fire"]};
+pokemonListHoenn[4] = {name: "Combusken", height: 0.9, types: ["fire"]};
+pokemonListHoenn[5] = {name: "Blaziken", height: 1.9, types: ["fire"]};
+pokemonListHoenn[6] = {name: "Mudkip", height: 0.4, types: ["water"]};
+pokemonListHoenn[7] = {name: "Marshtomp", height: 0.7, types: ["water"]};
+pokemonListHoenn[8] = {name: "Swampert", height: 1.5, types: ["water"]};
+
+
+    function printPokemonList(list) {
+        for (let i = 0; i < list.length; i++) {
+            if (list[i].height > 1.8) {
+                document.write('<li class="bordered">' + list[i].name + ' <b>(height: ' + list[i].height + ')</b> - ' + list[i].types + '</li>');
+            } else {
+                document.write('<li class="bordered">' + list[i].name + ' (height: ' + list[i].height + ') - ' + list[i].types + '</li>');
+            }
+            }
+        }
+
+    function printButton () {
+        document.write('<h2>Kanto Starters</h2>');
+        printPokemonList(pokemonListKanto);
+        document.write('</br><h2>Johto Starters</h2>');
+        printPokemonList(pokemonListJohto);
+        document.write('</br><h2>Hoenn Starters</h2>');
+        printPokemonList(pokemonListHoenn);
     }
