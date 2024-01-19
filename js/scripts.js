@@ -11,3 +11,12 @@ pokemonList[6] = {name: "Squirtle", height: 0.5, types: ["water"]};
 pokemonList[7] = {name: "Wartortle", height: 1, types: ["water"]};
 pokemonList[8] = {name: "Blastoise", height: 1.6, types: ["water"]};
 
+// Loop through the pokemonList array and print the name and height of each pokemon
+
+for (let i = 0; i < pokemonList.length; i++) {
+    if (pokemonList[i].height > 1.6) {
+        document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") - Wow, that's big! <br>");
+    } else {
+        document.write(pokemonList[i].name + " (height: " + pokemonList[i].height + ") <br>");
+    }
+    }
