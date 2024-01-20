@@ -34,32 +34,44 @@ pokemonListHoenn[7] = {name: "Marshtomp", height: 0.7, types: ["water"]};
 pokemonListHoenn[8] = {name: "Swampert", height: 1.5, types: ["water"]};
 
 
-    // foreach loop of pokemonList
-    // let printPokemonList = (function () {
-    //     return function (pokeList) {
-    //     pokeList.forEach(function (pokemon) {
-            // if (pokemon.height > 1.8) {
-            //     document.write('<li class="bordered">' + pokemon.name + ' <b>(height: ' + pokemon.height + ')</b> - ' + pokemon.types + '</li>');
-            // } else {
-            //     document.write('<li class="bordered">' + pokemon.name + ' (height: ' + pokemon.height + ') - ' + pokemon.types + '</li>');
-            // }
-    //     });
-    // }
-    // })();
-    let printPokemonList = (function (pokemonList) {
-        pokemonList.forEach(function (pokemon) {
-            if (pokemon.height > 1.8) {
-                document.write('<li class="bordered">' + pokemon.name + ' <b>(height: ' + pokemon.height + ')</b> - ' + pokemon.types + '</li>');
-            } else {
-                document.write('<li class="bordered">' + pokemon.name + ' (height: ' + pokemon.height + ') - ' + pokemon.types + '</li>');
-            }
-        });
-    });
-
+    // IIEF containing foreach loop that prints region lists
+    let printPokemonList = (function () {
+        
+        let printList = function (pokeList) {
+            pokeList.forEach(function (pokemon) {
+                    if (pokemon.height > 1.8) {
+                        document.write('<li class="bordered">' + pokemon.name + ' <b>(height: ' + pokemon.height + ')</b> - ' + pokemon.types + '</li>');
+                    } else {
+                        document.write('<li class="bordered">' + pokemon.name + ' (height: ' + pokemon.height + ') - ' + pokemon.types + '</li>');
+                    }
+                });
+        };
+        return {
+            regionList: printList
+        };
+    })();
 
     document.write('<h2>Kanto Starters</h2>');
-    printPokemonList(pokemonListKanto);
+    printPokemonList.regionList(pokemonListKanto);
     document.write('</br><h2>Johto Starters</h2>');
-    printPokemonList(pokemonListJohto);
+    printPokemonList.regionList(pokemonListJohto);
     document.write('</br><h2>Hoenn Starters</h2>');
-    printPokemonList(pokemonListHoenn);
+    printPokemonList.regionList(pokemonListHoenn);
+    
+    // let printPokemonList = (function (pokemonList) {
+    //     pokemonList.forEach(function (pokemon) {
+    //         if (pokemon.height > 1.8) {
+    //             document.write('<li class="bordered">' + pokemon.name + ' <b>(height: ' + pokemon.height + ')</b> - ' + pokemon.types + '</li>');
+    //         } else {
+    //             document.write('<li class="bordered">' + pokemon.name + ' (height: ' + pokemon.height + ') - ' + pokemon.types + '</li>');
+    //         }
+    //     });
+    // });
+
+
+    // document.write('<h2>Kanto Starters</h2>');
+    // printPokemonList(pokemonListKanto);
+    // document.write('</br><h2>Johto Starters</h2>');
+    // printPokemonList(pokemonListJohto);
+    // document.write('</br><h2>Hoenn Starters</h2>');
+    // printPokemonList(pokemonListHoenn);
