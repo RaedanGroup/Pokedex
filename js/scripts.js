@@ -45,7 +45,8 @@ pokemonListHoenn[8] = {name: "Swampert", height: 1.5, types: ["water"]};
     //     }
 
     // foreach loop of pokemonList
-    let printPokemonList = function (pokeList) {
+    let printPokemonList = (function () {
+        return function (pokeList) {
         pokeList.forEach(function (pokemon) {
             if (pokemon.height > 1.8) {
                 document.write('<li class="bordered">' + pokemon.name + ' <b>(height: ' + pokemon.height + ')</b> - ' + pokemon.types + '</li>');
@@ -54,7 +55,8 @@ pokemonListHoenn[8] = {name: "Swampert", height: 1.5, types: ["water"]};
             }
         });
     }
-
+    })();
+    
     document.write('<h2>Kanto Starters</h2>');
     printPokemonList(pokemonListKanto);
     document.write('</br><h2>Johto Starters</h2>');
