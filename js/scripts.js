@@ -1,4 +1,4 @@
-// Arrary of 3 Pokemon and their evolutions, types, and heights
+// Arrary of 3 Pokemon evolutions names, types, and heights
 
 let pokemonListKanto = [];
 pokemonListKanto[0] = {name: "Bulbasaur", height: 0.7, types: ["grass", " poison"]};
@@ -34,21 +34,30 @@ pokemonListHoenn[7] = {name: "Marshtomp", height: 0.7, types: ["water"]};
 pokemonListHoenn[8] = {name: "Swampert", height: 1.5, types: ["water"]};
 
 
-    function printPokemonList(list) {
-        for (let i = 0; i < list.length; i++) {
-            if (list[i].height > 1.8) {
-                document.write('<li class="bordered">' + list[i].name + ' <b>(height: ' + list[i].height + ')</b> - ' + list[i].types + '</li>');
-            } else {
-                document.write('<li class="bordered">' + list[i].name + ' (height: ' + list[i].height + ') - ' + list[i].types + '</li>');
-            }
-            }
-        }
+    // function printPokemonList(list) {
+    //     for (let i = 0; i < list.length; i++) {
+    //         if (list[i].height > 1.8) {
+    //             document.write('<li class="bordered">' + list[i].name + ' <b>(height: ' + list[i].height + ')</b> - ' + list[i].types + '</li>');
+    //         } else {
+    //             document.write('<li class="bordered">' + list[i].name + ' (height: ' + list[i].height + ') - ' + list[i].types + '</li>');
+    //         }
+    //         }
+    //     }
 
-    function printButton () {
-        document.write('<h2>Kanto Starters</h2>');
-        printPokemonList(pokemonListKanto);
-        document.write('</br><h2>Johto Starters</h2>');
-        printPokemonList(pokemonListJohto);
-        document.write('</br><h2>Hoenn Starters</h2>');
-        printPokemonList(pokemonListHoenn);
+    // foreach loop of pokemonList
+    let printPokemonList = function (pokeList) {
+        pokeList.forEach(function (pokemon) {
+            if (pokemon.height > 1.8) {
+                document.write('<li class="bordered">' + pokemon.name + ' <b>(height: ' + pokemon.height + ')</b> - ' + pokemon.types + '</li>');
+            } else {
+                document.write('<li class="bordered">' + pokemon.name + ' (height: ' + pokemon.height + ') - ' + pokemon.types + '</li>');
+            }
+        });
     }
+
+    document.write('<h2>Kanto Starters</h2>');
+    printPokemonList(pokemonListKanto);
+    document.write('</br><h2>Johto Starters</h2>');
+    printPokemonList(pokemonListJohto);
+    document.write('</br><h2>Hoenn Starters</h2>');
+    printPokemonList(pokemonListHoenn);
