@@ -34,29 +34,29 @@ pokemonListHoenn[7] = {name: "Marshtomp", height: 0.7, types: ["water"]};
 pokemonListHoenn[8] = {name: "Swampert", height: 1.5, types: ["water"]};
 
 
-    // function printPokemonList(list) {
-    //     for (let i = 0; i < list.length; i++) {
-    //         if (list[i].height > 1.8) {
-    //             document.write('<li class="bordered">' + list[i].name + ' <b>(height: ' + list[i].height + ')</b> - ' + list[i].types + '</li>');
-    //         } else {
-    //             document.write('<li class="bordered">' + list[i].name + ' (height: ' + list[i].height + ') - ' + list[i].types + '</li>');
-    //         }
-    //         }
-    //     }
-
     // foreach loop of pokemonList
-    let printPokemonList = (function () {
-        return function (pokeList) {
-        pokeList.forEach(function (pokemon) {
+    // let printPokemonList = (function () {
+    //     return function (pokeList) {
+    //     pokeList.forEach(function (pokemon) {
+            // if (pokemon.height > 1.8) {
+            //     document.write('<li class="bordered">' + pokemon.name + ' <b>(height: ' + pokemon.height + ')</b> - ' + pokemon.types + '</li>');
+            // } else {
+            //     document.write('<li class="bordered">' + pokemon.name + ' (height: ' + pokemon.height + ') - ' + pokemon.types + '</li>');
+            // }
+    //     });
+    // }
+    // })();
+    let printPokemonList = (function (pokemonList) {
+        pokemonList.forEach(function (pokemon) {
             if (pokemon.height > 1.8) {
                 document.write('<li class="bordered">' + pokemon.name + ' <b>(height: ' + pokemon.height + ')</b> - ' + pokemon.types + '</li>');
             } else {
                 document.write('<li class="bordered">' + pokemon.name + ' (height: ' + pokemon.height + ') - ' + pokemon.types + '</li>');
             }
         });
-    }
-    })();
-    
+    });
+
+
     document.write('<h2>Kanto Starters</h2>');
     printPokemonList(pokemonListKanto);
     document.write('</br><h2>Johto Starters</h2>');
