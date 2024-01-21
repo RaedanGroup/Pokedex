@@ -51,27 +51,33 @@ pokemonListHoenn[8] = {name: "Swampert", height: 1.5, types: ["water"]};
         };
     })();
 
+    let pokemonFavoritesRepository = (function () {
+        let pokemonFavoritesList = [];
+      
+        function add(pokemon) {
+          pokemonFavoritesList.push(pokemon);
+        }
+      
+        function getAll() {
+          return pokemonFavoritesList;
+        }
+      
+        return {
+          add: add,
+          getAll: getAll
+        };
+      })();
+
+    //   Add my favorite pokemon to the Favorites List
+    pokemonFavoritesRepository.add({ name: 'Arcanine', height: 1.9, types: 'fire'});
+
+    // Write Region Lists to the DOM
     document.write('<h2>Kanto Starters</h2>');
     printPokemonList.regionList(pokemonListKanto);
     document.write('</br><h2>Johto Starters</h2>');
     printPokemonList.regionList(pokemonListJohto);
     document.write('</br><h2>Hoenn Starters</h2>');
     printPokemonList.regionList(pokemonListHoenn);
-    
-    // let printPokemonList = (function (pokemonList) {
-    //     pokemonList.forEach(function (pokemon) {
-    //         if (pokemon.height > 1.8) {
-    //             document.write('<li class="bordered">' + pokemon.name + ' <b>(height: ' + pokemon.height + ')</b> - ' + pokemon.types + '</li>');
-    //         } else {
-    //             document.write('<li class="bordered">' + pokemon.name + ' (height: ' + pokemon.height + ') - ' + pokemon.types + '</li>');
-    //         }
-    //     });
-    // });
 
-
-    // document.write('<h2>Kanto Starters</h2>');
-    // printPokemonList(pokemonListKanto);
-    // document.write('</br><h2>Johto Starters</h2>');
-    // printPokemonList(pokemonListJohto);
-    // document.write('</br><h2>Hoenn Starters</h2>');
-    // printPokemonList(pokemonListHoenn);
+    // Log Favorites List to console
+    console.log(pokemonFavoritesRepository.getAll());
