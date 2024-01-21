@@ -52,22 +52,26 @@ pokemonListHoenn[8] = {name: "Swampert", height: 1.5, types: ["water"]};
     })();
 
     let pokemonFavoritesRepository = (function () {
-        let pokemonFavoritesList = [];
-      
-        function add(pokemon) {
-          pokemonFavoritesList.push(pokemon);
-        }
-      
-        function getAll() {
-          return pokemonFavoritesList;
-        }
-      
-        return {
-          add: add,
-          getAll: getAll
-        };
-      })();
+        let favoritesList = []
 
+        let add = function (pokemon) {
+            if (typeof pokemon.name === 'string' && typeof pokemon.height === 'number' && typeof pokemon.types === 'string') {
+                favoritesList.push(pokemon);
+            } else {
+                console.error("Invalid Pokemon object");
+            }
+        }
+
+        let getAll = function () {
+            return favoritesList;
+        }
+
+        return {
+            add: add,
+            getAll: getAll
+        }
+    })()
+    
     //   Add my favorite pokemon to the Favorites List
     pokemonFavoritesRepository.add({ name: 'Arcanine', height: 1.9, types: 'fire'});
 
@@ -79,5 +83,5 @@ pokemonListHoenn[8] = {name: "Swampert", height: 1.5, types: ["water"]};
     document.write('</br><h2>Hoenn Starters</h2>');
     printPokemonList.regionList(pokemonListHoenn);
 
-    // Log Favorites List to console
+    // Log Favorites List array to console
     console.log(pokemonFavoritesRepository.getAll());
