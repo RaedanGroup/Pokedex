@@ -55,23 +55,25 @@ li.bordered {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.5);
-
     z-index: 999;
-
     overflow: auto;
-
     text-align: center;
 }
 
 .modal {
     margin: auto;
-    display: inline-block;
+    display: block;
     box-sizing: border-box;
     background: white;
     padding: 15px;
-    width: 100%;
     max-width: 700px;
     text-align: left;
+}
+
+.modal-image {
+    float: left;
+    max-width: 50%;
+    margin: 0 auto;
 }
 
 .modal-close {
@@ -89,7 +91,10 @@ li.bordered {
 }
 
 .modal p {
-    margin-bottom: 0;
+    margin: 0 auto;
+    width: 50%;
+    float: left;
+    text-align: center;
 }
 
 #modal-container {

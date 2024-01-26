@@ -3,7 +3,7 @@ let pokemonRepository = (function () {
 
     // modal that will be used for pokemon details
     let modalContainer = document.querySelector('#modal-container');
-    function showModal(title, text) {
+    function showModal(title, text, imageUrl) {
         modalContainer.innerHTML = '';
         let modal = document.createElement('div');
         modal.classList.add('modal');
@@ -14,14 +14,18 @@ let pokemonRepository = (function () {
         closeButtonElement.addEventListener('click', hideModal);
 
         let titleElement = document.createElement('h1');
-        titleElement.innerText = title;
+        titleElement.innerHTML = title;
 
         let contentElement = document.createElement('p');
-        contentElement.innerText = text;
+        contentElement.innerHTML = text;
+
+        let imageElement = document.createElement('img');
+        imageElement.src = imageUrl;
 
         modal.appendChild(closeButtonElement);
         modal.appendChild(titleElement);
         modal.appendChild(contentElement);
+        modal.appendChild(imageElement);
         modalContainer.appendChild(modal);
 
         modalContainer.classList.add('is-visible');
@@ -119,7 +123,7 @@ let pokemonRepository = (function () {
         let pokemonList = document.querySelector('.pokemon-list');
         let listPokemon = document.createElement('li');
         let button = document.createElement('button');
-        button.innerText = pokemon.name;
+        button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
         button.classList.add('button-class');
         listPokemon.appendChild(button);
         pokemonList.appendChild(listPokemon);
@@ -136,7 +140,9 @@ let pokemonRepository = (function () {
     // button content details passed to log
     function showDetails (pokemon) {
         loadDetails(pokemon).then(function () {
-        showModal(pokemon);
+        let title = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+        let text = 'Height: ' + pokemon.height + 'm<br>' + 'Type: ' + pokemon.types.map(typeInfo => typeInfo.type.name).join(', ');
+        showModal(title, text, pokemon.imageUrl);
         });
     }
 
