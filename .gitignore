@@ -1,2 +1,2 @@
-echo "node_modules/" >> .gitignore
-echo ".vscode/" >> .gitignore
+node_modules/
+.vscode/
