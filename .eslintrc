@@ -1,7 +1,8 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "jquery": true
     },
     "extends": [
         "eslint:recommended"
@@ -15,8 +16,5 @@
         "linebreak-style": ["error", "windows"],
         "quotes": ["error", "single"],
         "semi": ["error", "always"]
-    },
-    "globals": {
-        "$": "readonly"
     }
 }
